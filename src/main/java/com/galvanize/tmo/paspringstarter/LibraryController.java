@@ -2,8 +2,12 @@ package com.galvanize.tmo.paspringstarter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -21,8 +25,8 @@ public class LibraryController {
     }
 
     @GetMapping("/api/books")
-    public List<Book> getBooks() {
-        return libraryService.getBooks();
+    public ResponseEntity getBooks() {
+        return ResponseEntity.ok(libraryService.getBooks());
     }
 
     @PostMapping("/api/books")
