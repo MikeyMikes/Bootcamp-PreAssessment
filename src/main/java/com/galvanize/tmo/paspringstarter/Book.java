@@ -16,11 +16,11 @@ public class Book {
 
     private String author;
     private String title;
-    private Date datePublished;
+    private int datePublished;
 
     public Book() {}
 
-    public Book(String author, String title, Date datePublished) {
+    public Book(String author, String title, int datePublished) {
         this.author = author;
         this.title = title;
         this.datePublished = datePublished;
@@ -46,11 +46,11 @@ public class Book {
         this.title = title;
     }
 
-    public Date getDatePublished() {
+    public int getDatePublished() {
         return datePublished;
     }
 
-    public void setDatePublished(Date datePublished) {
+    public void setDatePublished(int datePublished) {
         this.datePublished = datePublished;
     }
 }
