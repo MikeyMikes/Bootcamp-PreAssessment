@@ -21,12 +21,12 @@ public class LibraryController {
     }
 
     @GetMapping("/api/books")
-    @ResponseStatus(HttpStatus.CREATED)
     public List<Book> getBooks() {
         return libraryService.getBooks();
     }
 
     @PostMapping("/api/books")
+    @ResponseStatus(HttpStatus.CREATED)
     public Book addBook(@RequestBody Book book) {
         return libraryService.addBook(book);
     }
