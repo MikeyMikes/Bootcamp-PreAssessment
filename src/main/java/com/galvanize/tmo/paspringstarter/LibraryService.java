@@ -2,7 +2,6 @@ package com.galvanize.tmo.paspringstarter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,8 +19,8 @@ public class LibraryService {
         return libraryRepository.save(book);
     }
 
-    public ResponseEntity getBooks() {
-        return ResponseEntity.ok(libraryRepository.findAll(Sort.by(Sort.Direction.ASC, "title")));
+    public List<Book> getBooks() {
+        return libraryRepository.findAll(Sort.by(Sort.Direction.ASC, "title"));
     }
 
     public void deleteAllBooks() {

@@ -3,7 +3,6 @@ package com.galvanize.tmo.paspringstarter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,8 +24,8 @@ public class LibraryController {
     }
 
     @GetMapping("/api/books")
-    public ResponseEntity getBooks() {
-        return ResponseEntity.ok(libraryService.getBooks());
+    public List<Book> getBooks() {
+        return libraryService.getBooks();
     }
 
     @PostMapping("/api/books")
