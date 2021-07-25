@@ -1,6 +1,7 @@
 package com.galvanize.tmo.paspringstarter;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class LibraryController {
     }
 
     @GetMapping("/api/books")
+    @ResponseStatus(HttpStatus.CREATED)
     public List<Book> getBooks() {
         return libraryService.getBooks();
     }
@@ -30,6 +32,7 @@ public class LibraryController {
     }
 
     @DeleteMapping("/api/books")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAllBooks() {
         libraryService.deleteAllBooks();
     }

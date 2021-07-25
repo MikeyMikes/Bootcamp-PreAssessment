@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "books")
@@ -15,11 +16,11 @@ public class Book {
 
     private String author;
     private String title;
-    private String datePublished;
+    private Date datePublished;
 
     public Book() {}
 
-    public Book(String author, String title, String datePublished) {
+    public Book(String author, String title, Date datePublished) {
         this.author = author;
         this.title = title;
         this.datePublished = datePublished;
@@ -45,11 +46,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getDatePublished() {
+    public Date getDatePublished() {
         return datePublished;
     }
 
-    public void setDatePublished(String datePublished) {
+    public void setDatePublished(Date datePublished) {
         this.datePublished = datePublished;
     }
 }
