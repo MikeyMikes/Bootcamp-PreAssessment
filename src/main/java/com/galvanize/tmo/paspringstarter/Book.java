@@ -4,7 +4,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "books")
-@SequenceGenerator(name="seq", initialValue=1, allocationSize=100)
+@SequenceGenerator(name="seq", initialValue=0, allocationSize=100)
 public class Book {
 
     @Id
