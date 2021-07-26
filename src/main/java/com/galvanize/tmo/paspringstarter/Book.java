@@ -1,17 +1,14 @@
 package com.galvanize.tmo.paspringstarter;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "books")
+@SequenceGenerator(name="seq", initialValue=2, allocationSize=100)
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     private Long id;
 
     private String author;
